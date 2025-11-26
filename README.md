@@ -24,18 +24,8 @@ Automated test suite covering complete vehicle financing flow:
 
 ## 🚀 Quick Start
 
-\`\`\`bash
+bash:
 npm install
 npx playwright test
-\`\`\`
-```
 
----
-
-## 💎 My Recommendation
-
-**Use this combo**:
-
-**Description**:
-```
 E2E test automation for AutoCash platform - Vehicle search, filtering, and financing flow validation with Playwright
