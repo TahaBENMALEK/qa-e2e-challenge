@@ -1,3 +1,13 @@
+/**
+ * Playwright Test Configuration
+ * Defines:
+ * - Test directory structure and execution settings
+ * - Browser configuration (Chromium)
+ * - Timeout values and retry logic
+ * - Reporter output formats (HTML + JSON)
+ * - Environment-driven behavior (BASE_URL, headless mode)
+ */
+
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 
