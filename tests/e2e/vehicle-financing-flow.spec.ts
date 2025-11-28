@@ -37,9 +37,8 @@ test.describe('AutoCash Vehicle Financing Flow', () => {
       await searchPage.setMaxPrice(testData.maxPrice);
     });
 
-    await test.step('Validate results exist', async () => {
-      const count = await searchPage.getResultsCount();
-      expect(count).toBeGreaterThan(0);  // Ensures non-empty result set
+    await test.step('Validate filtered results', async () => {
+      await searchPage.validateFilteredResults(testData.maxPrice);
     });
 
     await test.step('Open first vehicle', async () => {
