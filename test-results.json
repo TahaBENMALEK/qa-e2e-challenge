@@ -75,7 +75,7 @@
           "specs": [
             {
               "title": "should complete financing eligible vehicle search flow",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -88,48 +88,94 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 12581,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 14090,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n\n    at VehicleDetailsPage.validateVehicleInfo (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts:15:65)\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:54:25\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:53:16",
+                        "location": {
+                          "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts",
+                          "column": 65,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mpages\\VehicleDetailsPage.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36masync\u001b[39m validateVehicleInfo() {\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Verifies brand and model text appears (partial match)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByText(\u001b[32m'Marque:BmwModèle:Série'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m validateFinancingButton() {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts",
+                            "column": 65,
+                            "line": 15
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n\n\n\u001b[90m   at \u001b[39mpages\\VehicleDetailsPage.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36masync\u001b[39m validateVehicleInfo() {\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Verifies brand and model text appears (partial match)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByText(\u001b[32m'Marque:BmwModèle:Série'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m validateFinancingButton() {\u001b[0m\n\u001b[2m    at VehicleDetailsPage.validateVehicleInfo (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts:15:65)\u001b[22m\n\u001b[2m    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:54:25\u001b[22m\n\u001b[2m    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:53:16\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
                       "steps": [
                         {
                           "title": "Navigate and accept cookies",
-                          "duration": 4816
+                          "duration": 3590
                         },
                         {
                           "title": "Select brand and category",
-                          "duration": 1457
+                          "duration": 1337
                         },
                         {
                           "title": "Apply financing and price filters",
-                          "duration": 2552
+                          "duration": 1824
                         },
                         {
-                          "title": "Validate results exist",
-                          "duration": 38
+                          "title": "Validate filtered results",
+                          "duration": 41
                         },
                         {
                           "title": "Open first vehicle",
-                          "duration": 230
+                          "duration": 82
                         },
                         {
                           "title": "Validate vehicle details",
-                          "duration": 976
-                        },
-                        {
-                          "title": "Validate financing button",
-                          "duration": 26
+                          "duration": 5016,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n\n    at VehicleDetailsPage.validateVehicleInfo (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts:15:65)\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:54:25\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:53:16",
+                            "location": {
+                              "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts",
+                              "column": 65,
+                              "line": 15
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39mpages\\VehicleDetailsPage.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36masync\u001b[39m validateVehicleInfo() {\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Verifies brand and model text appears (partial match)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByText(\u001b[32m'Marque:BmwModèle:Série'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m validateFinancingButton() {\u001b[0m"
+                          }
                         }
                       ],
-                      "startTime": "2025-11-27T18:36:25.672Z",
+                      "startTime": "2025-11-28T02:29:53.136Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\test-results\\e2e-vehicle-financing-flow-26d6a-ligible-vehicle-search-flow-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\test-results\\e2e-vehicle-financing-flow-26d6a-ligible-vehicle-search-flow-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\test-results\\e2e-vehicle-financing-flow-26d6a-ligible-vehicle-search-flow-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts",
+                        "column": 65,
+                        "line": 15
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "61396da8fee5beba579e-3ff18e4339519c33e707",
@@ -144,11 +190,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-11-27T18:36:22.991Z",
-    "duration": 17562.934,
-    "expected": 1,
+    "startTime": "2025-11-28T02:29:50.983Z",
+    "duration": 20135.637,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
