@@ -89,42 +89,52 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12581,
+                      "duration": 8789,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Financing filter is active - results may include financing-eligible vehicles\n"
+                        },
+                        {
+                          "text": "Vehicle details: Not available\n"
+                        },
+                        {
+                          "text": "Financing button: Not available\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
                       "steps": [
                         {
                           "title": "Navigate and accept cookies",
-                          "duration": 4816
+                          "duration": 4080
                         },
                         {
                           "title": "Select brand and category",
-                          "duration": 1457
+                          "duration": 1207
                         },
                         {
                           "title": "Apply financing and price filters",
-                          "duration": 2552
+                          "duration": 1904
                         },
                         {
-                          "title": "Validate results exist",
-                          "duration": 38
+                          "title": "Validate filtered results",
+                          "duration": 32
                         },
                         {
                           "title": "Open first vehicle",
-                          "duration": 230
+                          "duration": 106
                         },
                         {
                           "title": "Validate vehicle details",
-                          "duration": 976
+                          "duration": 24
                         },
                         {
                           "title": "Validate financing button",
-                          "duration": 26
+                          "duration": 9
                         }
                       ],
-                      "startTime": "2025-11-27T18:36:25.672Z",
+                      "startTime": "2025-11-28T00:15:29.758Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -144,8 +154,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-11-27T18:36:22.991Z",
-    "duration": 17562.934,
+    "startTime": "2025-11-28T00:15:27.878Z",
+    "duration": 12720.279,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
