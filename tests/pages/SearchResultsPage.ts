@@ -4,7 +4,7 @@
  * - Financing eligibility filter activation
  * - Price range configuration
  * - Vehicle card interaction and counting
- * - Navigation to vehicle details
+ * - Results validation
  */
 
 import { Page, expect } from '@playwright/test';
@@ -34,5 +34,22 @@ export class SearchResultsPage {
     // Counts all vehicle cards matching data-testid pattern
     const cards = this.page.locator('[data-testid^="vehicle-card-"]');
     return await cards.count();
+  }
+
+  async validateFilteredResults(maxPrice: number): Promise<void> {
+    // Verify financing filter is applied
+    const checkbox = this.page.getByTestId('eligibleAuFinancement-true');
+    await expect(checkbox, 'Financing filter should be checked').toBeChecked();
+    
+    // Verify price range on first 3 vehicles
+    const priceLocators = this.page.locator('[data-testid^="vehicle-card-"] [class*="price"]');
+    const count = await priceLocators.count();
+    
+    // Check sample of vehicles to ensure price filter works
+    for (let i = 0; i < Math.min(3, count); i++) {
+      const priceText = await priceLocators.nth(i).textContent();
+      const price = parseInt(priceText?.replace(/\D/g, '') || '0');
+      expect(price, `Vehicle ${i + 1} price should be <= ${maxPrice}`).toBeLessThanOrEqual(maxPrice);
+    }
   }
 }

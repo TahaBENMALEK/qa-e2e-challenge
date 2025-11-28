@@ -3,7 +3,7 @@
  * Validates complete user journey:
  * 1. Homepage navigation and search configuration
  * 2. Filter application (financing + price)
- * 3. Results validation
+ * 3. Results validation with strict assertions
  * 4. Vehicle details inspection
  * 5. Financing button verification
  */
@@ -37,9 +37,13 @@ test.describe('AutoCash Vehicle Financing Flow', () => {
       await searchPage.setMaxPrice(testData.maxPrice);
     });
 
-    await test.step('Validate results exist', async () => {
+    await test.step('Validate filtered results', async () => {
+      // Ensure non-empty result set
       const count = await searchPage.getResultsCount();
-      expect(count).toBeGreaterThan(0);  // Ensures non-empty result set
+      expect(count, `Expected vehicles for ${testData.brand}/${testData.category}`).toBeGreaterThan(0);
+      
+      // Verify filters are correctly applied
+      await searchPage.validateFilteredResults(testData.maxPrice);
     });
 
     await test.step('Open first vehicle', async () => {
