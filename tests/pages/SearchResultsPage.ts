@@ -23,11 +23,14 @@ export class SearchResultsPage {
     await priceInput.click();
     await priceInput.fill(price.toString());
     await priceInput.press('Enter');  // Triggers filter application
+    await this.page.waitForTimeout(3000);  // Wait for filters to apply automatically
   }
 
   async openFirstVehicle() {
-    // Opens top search result
+    // Click on first vehicle card to open details
     await this.page.getByTestId('vehicle-card-0').click();
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(2000);  // Wait for page transition
   }
 
   async getResultsCount(): Promise<number> {

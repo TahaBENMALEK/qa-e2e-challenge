@@ -89,25 +89,25 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 14090,
+                      "duration": 18270,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n\n    at VehicleDetailsPage.validateVehicleInfo (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts:15:65)\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:54:25\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:53:16",
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"vehicle-card-0\"]').locator('a, [role=\"link\"]').first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"vehicle-card-0\"]').locator('a, [role=\"link\"]').first()\u001b[22m\n\n    at SearchResultsPage.openFirstVehicle (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\SearchResultsPage.ts:32:23)\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:50:24\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:49:16",
                         "location": {
-                          "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts",
-                          "column": 65,
-                          "line": 15
+                          "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\SearchResultsPage.ts",
+                          "column": 23,
+                          "line": 32
                         },
-                        "snippet": "\u001b[90m   at \u001b[39mpages\\VehicleDetailsPage.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36masync\u001b[39m validateVehicleInfo() {\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Verifies brand and model text appears (partial match)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByText(\u001b[32m'Marque:BmwModèle:Série'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m validateFinancingButton() {\u001b[0m"
+                        "snippet": "\u001b[90m   at \u001b[39mpages\\SearchResultsPage.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m     \u001b[36mconst\u001b[39m firstCard \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"vehicle-card-0\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mconst\u001b[39m vehicleLink \u001b[33m=\u001b[39m firstCard\u001b[33m.\u001b[39mlocator(\u001b[32m'a, [role=\"link\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m vehicleLink\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m   }\n \u001b[90m 35 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts",
-                            "column": 65,
-                            "line": 15
+                            "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\SearchResultsPage.ts",
+                            "column": 23,
+                            "line": 32
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n\n\n\u001b[90m   at \u001b[39mpages\\VehicleDetailsPage.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36masync\u001b[39m validateVehicleInfo() {\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Verifies brand and model text appears (partial match)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByText(\u001b[32m'Marque:BmwModèle:Série'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m validateFinancingButton() {\u001b[0m\n\u001b[2m    at VehicleDetailsPage.validateVehicleInfo (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts:15:65)\u001b[22m\n\u001b[2m    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:54:25\u001b[22m\n\u001b[2m    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:53:16\u001b[22m"
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"vehicle-card-0\"]').locator('a, [role=\"link\"]').first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39mpages\\SearchResultsPage.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m     \u001b[36mconst\u001b[39m firstCard \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"vehicle-card-0\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mconst\u001b[39m vehicleLink \u001b[33m=\u001b[39m firstCard\u001b[33m.\u001b[39mlocator(\u001b[32m'a, [role=\"link\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m vehicleLink\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m   }\n \u001b[90m 35 |\u001b[39m\u001b[0m\n\u001b[2m    at SearchResultsPage.openFirstVehicle (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\SearchResultsPage.ts:32:23)\u001b[22m\n\u001b[2m    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:50:24\u001b[22m\n\u001b[2m    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:49:16\u001b[22m"
                         }
                       ],
                       "stdout": [],
@@ -116,40 +116,36 @@
                       "steps": [
                         {
                           "title": "Navigate and accept cookies",
-                          "duration": 3590
+                          "duration": 3632
                         },
                         {
                           "title": "Select brand and category",
-                          "duration": 1337
+                          "duration": 1094
                         },
                         {
                           "title": "Apply financing and price filters",
-                          "duration": 1824
+                          "duration": 1904
                         },
                         {
                           "title": "Validate filtered results",
-                          "duration": 41
+                          "duration": 53
                         },
                         {
                           "title": "Open first vehicle",
-                          "duration": 82
-                        },
-                        {
-                          "title": "Validate vehicle details",
-                          "duration": 5016,
+                          "duration": 10011,
                           "error": {
-                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n",
-                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Marque:BmwModèle:Série')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Marque:BmwModèle:Série')\u001b[22m\n\n    at VehicleDetailsPage.validateVehicleInfo (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts:15:65)\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:54:25\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:53:16",
+                            "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"vehicle-card-0\"]').locator('a, [role=\"link\"]').first()\u001b[22m\n",
+                            "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"vehicle-card-0\"]').locator('a, [role=\"link\"]').first()\u001b[22m\n\n    at SearchResultsPage.openFirstVehicle (C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\SearchResultsPage.ts:32:23)\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:50:24\n    at C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\e2e\\vehicle-financing-flow.spec.ts:49:16",
                             "location": {
-                              "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts",
-                              "column": 65,
-                              "line": 15
+                              "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\SearchResultsPage.ts",
+                              "column": 23,
+                              "line": 32
                             },
-                            "snippet": "\u001b[90m   at \u001b[39mpages\\VehicleDetailsPage.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36masync\u001b[39m validateVehicleInfo() {\n \u001b[90m 14 |\u001b[39m     \u001b[90m// Verifies brand and model text appears (partial match)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByText(\u001b[32m'Marque:BmwModèle:Série'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m validateFinancingButton() {\u001b[0m"
+                            "snippet": "\u001b[90m   at \u001b[39mpages\\SearchResultsPage.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m     \u001b[36mconst\u001b[39m firstCard \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"vehicle-card-0\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mconst\u001b[39m vehicleLink \u001b[33m=\u001b[39m firstCard\u001b[33m.\u001b[39mlocator(\u001b[32m'a, [role=\"link\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m vehicleLink\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m   }\n \u001b[90m 35 |\u001b[39m\u001b[0m"
                           }
                         }
                       ],
-                      "startTime": "2025-11-28T02:29:53.136Z",
+                      "startTime": "2025-11-28T02:55:16.754Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -169,9 +165,9 @@
                         }
                       ],
                       "errorLocation": {
-                        "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\VehicleDetailsPage.ts",
-                        "column": 65,
-                        "line": 15
+                        "file": "C:\\Users\\info\\Desktop\\projects\\qa-e2e-challenge\\tests\\pages\\SearchResultsPage.ts",
+                        "column": 23,
+                        "line": 32
                       }
                     }
                   ],
@@ -190,8 +186,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-11-28T02:29:50.983Z",
-    "duration": 20135.637,
+    "startTime": "2025-11-28T02:55:14.516Z",
+    "duration": 21499.855,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,
